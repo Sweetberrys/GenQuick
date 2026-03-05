@@ -1,0 +1,50 @@
+{
+  "name": "genquick",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-autostart": "^2.5.1",
+    "@tauri-apps/plugin-clipboard-manager": "^2.3.2",
+    "@tauri-apps/plugin-global-shortcut": "^2.3.1",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-shell": "^2.3.3",
+    "@viz-js/viz": "^3.24.0",
+    "@vueuse/core": "^14.1.0",
+    "echarts": "^5.5.1",
+    "echarts-wordcloud": "^2.1.0",
+    "fabric": "^7.1.0",
+    "highlight.js": "^11.11.1",
+    "html2canvas": "^1.4.1",
+    "marked": "^17.0.1",
+    "markmap-common": "^0.17.0",
+    "markmap-lib": "^0.17.0",
+    "markmap-view": "^0.17.0",
+    "mermaid": "^11.12.2",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.13",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/node": "^25.0.3",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass": "^1.97.1",
+    "terser": "^5.44.1",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.3",
+    "vue-tsc": "^2.1.10"
+  },
+  "pnpm": {
+    "overrides": {
+      "markmap-common": "^0.17.0"
+    }
+  }
+}

@@ -1,0 +1,654 @@
+/* 提示词调优页面样式 - 适配设置页面内容区 */
+.prompt-tuning {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 顶部导航栏 */
+.prompt-tuning .tuning-header {
+  background: var(--bg-primary);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.prompt-tuning .tuning-header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.prompt-tuning .tuning-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.prompt-tuning .tuning-header .logo-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--accent-color);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.prompt-tuning .tuning-header .nav-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.prompt-tuning .tuning-header .nav-tab {
+  padding: 6px 16px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 13px;
+  border: none;
+  background: transparent;
+  transition: all 0.15s;
+}
+
+.prompt-tuning .tuning-header .nav-tab:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.prompt-tuning .tuning-header .nav-tab.active {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* 主体内容 */
+.prompt-tuning .tuning-main {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* 左侧面板 */
+.prompt-tuning .left-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 宽屏模式下左侧面板固定宽度 */
+.prompt-tuning.show-right-panel .left-panel {
+  width: 50%;
+  flex: none;
+}
+
+/* 右侧面板 */
+.prompt-tuning .right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* 卡片通用样式 */
+.prompt-tuning .tuning-card {
+  background: var(--bg-primary);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+/* 非优化卡片不收缩 */
+.prompt-tuning .tuning-card:not(.optimized-card) {
+  flex-shrink: 0;
+}
+
+.prompt-tuning .tuning-card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color-light);
+  flex-shrink: 0;
+}
+
+.prompt-tuning .tuning-card .card-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.prompt-tuning .tuning-card .card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prompt-tuning .tuning-card .card-action-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text-tertiary);
+  transition: all 0.15s;
+}
+
+.prompt-tuning .tuning-card .card-action-btn:hover:not(:disabled) {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.prompt-tuning .tuning-card .card-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prompt-tuning .tuning-card .card-body {
+  padding: 12px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+/* 文本框 */
+.prompt-tuning .textarea-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.prompt-tuning .textarea {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  border: none;
+  resize: none;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: transparent;
+  outline: none;
+  font-family: inherit;
+}
+
+/* 原始提示词的文本框保持可调整大小 */
+.prompt-tuning .tuning-card:not(.optimized-card) .textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.prompt-tuning .textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.prompt-tuning .char-count {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 表单行 */
+.prompt-tuning .form-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color-light);
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+/* 单行表单布局 */
+.prompt-tuning .form-row-inline {
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+.prompt-tuning .form-row-inline .form-group {
+  flex: 1;
+  min-width: 160px;
+}
+
+.prompt-tuning .form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.prompt-tuning .form-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.prompt-tuning .form-select {
+  width: 100%;
+  height: 32px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0 28px 0 10px;
+  font-size: 12px;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.prompt-tuning .form-select:hover {
+  border-color: var(--text-tertiary);
+}
+
+.prompt-tuning .form-select:focus {
+  border-color: var(--accent-color);
+}
+
+/* 自定义下拉选择框 */
+.prompt-tuning .custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.prompt-tuning .custom-select-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 28px 0 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-primary);
+  transition: border-color 0.15s;
+  position: relative;
+}
+
+.prompt-tuning .custom-select-trigger:hover {
+  border-color: var(--text-tertiary);
+}
+
+.prompt-tuning .custom-select.open .custom-select-trigger {
+  border-color: var(--accent-color);
+}
+
+.prompt-tuning .custom-select-trigger .select-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prompt-tuning .custom-select-trigger .select-placeholder {
+  flex: 1;
+  color: var(--text-tertiary);
+}
+
+.prompt-tuning .custom-select-trigger .select-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-tertiary);
+  transition: transform 0.2s;
+}
+
+.prompt-tuning .custom-select.open .select-arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.prompt-tuning .custom-select-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 240px;
+  overflow-y: auto;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.prompt-tuning .custom-select-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.prompt-tuning .custom-select-option:hover {
+  background: var(--bg-secondary);
+}
+
+.prompt-tuning .custom-select-option.selected {
+  background: var(--accent-color-light, rgba(59, 130, 246, 0.1));
+  color: var(--accent-color);
+}
+
+.prompt-tuning .custom-select-option .option-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prompt-tuning .optimize-btn {
+  height: 32px;
+  padding: 0 20px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.prompt-tuning .optimize-btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.prompt-tuning .optimize-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 优化后的提示词卡片 */
+.prompt-tuning .optimized-card {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt-tuning .optimized-content {
+  flex: 1;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-y: auto;
+}
+
+.prompt-tuning .optimized-content.has-content {
+  color: var(--text-primary);
+}
+
+/* 测试内容卡片 */
+.prompt-tuning .test-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt-tuning .test-model-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color-light);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.prompt-tuning .test-model-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.prompt-tuning .test-model-select {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.prompt-tuning .toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.prompt-tuning .toggle {
+  width: 40px;
+  height: 20px;
+  background: var(--border-color);
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.prompt-tuning .toggle::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: left 0.2s;
+}
+
+.prompt-tuning .toggle.active {
+  background: var(--accent-color);
+}
+
+.prompt-tuning .toggle.active::after {
+  left: 22px;
+}
+
+.prompt-tuning .toggle-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.prompt-tuning .run-btn {
+  height: 30px;
+  padding: 0 14px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.prompt-tuning .run-btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.prompt-tuning .run-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 结果对比区域 */
+.prompt-tuning .results-row {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+}
+
+.prompt-tuning .result-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.prompt-tuning .result-card .card-header {
+  background: var(--bg-tertiary);
+}
+
+.prompt-tuning .result-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prompt-tuning .result-tag {
+  padding: 2px 6px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.prompt-tuning .result-content {
+  flex: 1;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-y: auto;
+}
+
+.prompt-tuning .result-content.has-content {
+  color: var(--text-primary);
+}
+
+.prompt-tuning .result-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 100px;
+}
+
+.prompt-tuning .result-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: var(--text-tertiary);
+}
+
+.prompt-tuning .result-text {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+/* 加载动画 */
+.prompt-tuning .loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px;
+}
+
+.prompt-tuning .loading-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  animation: loadingBounce 1.4s infinite ease-in-out both;
+}
+
+.prompt-tuning .loading-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.prompt-tuning .loading-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes loadingBounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+
+/* 可编辑结果区域 */
+.prompt-tuning .editable-result {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.prompt-tuning .result-textarea {
+  flex: 1;
+  min-height: 100px;
+  resize: none;
+}
+
+.prompt-tuning .editable-result .loading-indicator {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 提示词评分组件容器 */
+.prompt-tuning .prompt-scoring {
+  flex: 1;
+  min-height: 0;
+  border-radius: 0;
+  overflow: hidden;
+}

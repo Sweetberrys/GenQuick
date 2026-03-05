@@ -1,0 +1,169 @@
+/* API 配置页面样式 */
+@import './settings-base.css';
+@import './settings-form.css';
+
+/* API 列表 */
+.api-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.api-card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  background: var(--bg-primary);
+}
+
+.api-card:hover {
+  border-color: var(--text-tertiary);
+}
+
+.api-card.active {
+  border-color: var(--accent-color);
+  background: var(--bg-tertiary);
+}
+
+.api-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color-light);
+}
+
+.api-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.api-type-badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.api-type-badge.openai {
+  background: #e7f5e7;
+  color: #1a7f1a;
+}
+
+.api-type-badge.gemini {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.api-type-badge.claude {
+  background: #fef3e7;
+  color: #c55a11;
+}
+
+.api-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.api-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.active-badge {
+  font-size: 12px;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.api-card-body {
+  padding: 14px 16px;
+}
+
+.api-detail {
+  display: flex;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.api-detail:last-child {
+  margin-bottom: 0;
+}
+
+.api-detail .label {
+  width: 70px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.api-detail .value {
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+/* API Tabs */
+.api-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color-light);
+}
+
+.api-tab {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.15s;
+}
+
+.api-tab:hover {
+  color: var(--text-primary);
+}
+
+.api-tab.active {
+  color: var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+/* API 类型选择器 */
+.api-type-selector {
+  display: flex;
+  gap: 10px;
+}
+
+.api-type-option {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: var(--bg-primary);
+}
+
+.api-type-option:hover {
+  border-color: var(--text-tertiary);
+}
+
+.api-type-option.active {
+  border-color: var(--accent-color);
+  background: var(--bg-tertiary);
+}
+
+.api-type-option .type-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}

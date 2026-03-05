@@ -1,0 +1,186 @@
+/* 激活状态页面样式 */
+@import './settings-base.css';
+@import './settings-form.css';
+@import './settings-pricing.css';
+
+/* 激活状态 */
+.activation-panel .activation-card {
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 2px solid var(--border-color);
+}
+
+.activation-panel .activation-card.active {
+  border-color: var(--success-color);
+  background: var(--bg-tertiary);
+}
+
+.activation-panel .activation-card.trial {
+  border-color: var(--warning-color);
+  background: var(--bg-tertiary);
+}
+
+.activation-panel .activation-card.expired {
+  border-color: var(--error-color);
+  background: var(--bg-tertiary);
+}
+
+.activation-panel .activation-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.activation-panel .activation-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent-color), #764ba2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.activation-panel .activation-info {
+  flex: 1;
+}
+
+.activation-panel .activation-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.activation-panel .activation-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.activation-panel .activation-badge.active {
+  background: var(--success-color);
+  color: white;
+}
+
+.activation-panel .activation-badge.trial {
+  background: var(--warning-color);
+  color: white;
+}
+
+.activation-panel .activation-badge.expired {
+  background: var(--error-color);
+  color: white;
+}
+
+.activation-panel .activation-badge.inactive {
+  background: var(--text-tertiary);
+  color: white;
+}
+
+.activation-panel .activation-details {
+  background: var(--bg-primary);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.activation-panel .detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.activation-panel .detail-row:not(:last-child) {
+  border-bottom: 1px solid var(--border-color-light);
+}
+
+.activation-panel .detail-row .label {
+  color: var(--text-secondary);
+}
+
+.activation-panel .detail-row .value {
+  font-weight: 500;
+  font-family: "Cascadia Code", monospace;
+  color: var(--text-primary);
+}
+
+.activation-panel .activation-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.activation-panel .activation-actions .btn-large {
+  flex: 1;
+  padding: 12px 24px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.activation-panel .activation-input-section {
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.activation-panel .activation-input-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.activation-panel .device-info {
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.activation-panel .device-info .info-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.activation-panel .device-info .device-id {
+  font-family: "Cascadia Code", monospace;
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* 设备信息内联 */
+.device-info-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.device-info-inline .device-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.device-info-inline .device-id {
+  font-family: "Cascadia Code", monospace;
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 500;
+  background: var(--bg-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}

@@ -1,0 +1,1199 @@
+/* 提示词评分页面样式 */
+.prompt-scoring {
+  display: flex;
+  height: 100%;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 左侧面板 */
+.prompt-scoring .scoring-left-panel {
+  width: 100%;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* 宽屏模式下左侧面板固定宽度 */
+.prompt-scoring.wide-mode .scoring-left-panel {
+  width: 40%;
+  border-right: 1px solid var(--border-color);
+}
+
+/* 右侧面板 */
+.prompt-scoring .scoring-right-panel {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 左侧头部 */
+.prompt-scoring .scoring-left-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color-light);
+  flex-shrink: 0;
+}
+
+.prompt-scoring .scoring-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prompt-scoring .scoring-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.prompt-scoring .scoring-logo-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-version-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+
+/* 左侧内容 */
+.prompt-scoring .scoring-left-content {
+  flex: 1;
+  padding: 16px 20px 32px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+}
+
+/* 输入区 */
+.prompt-scoring .scoring-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prompt-scoring .scoring-section-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt-scoring .scoring-section-label-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-scoring .scoring-section-label-icon.blue { 
+  background: rgba(26, 115, 232, 0.1); 
+  color: #1a73e8; 
+}
+
+.prompt-scoring .scoring-section-label-icon.green { 
+  background: rgba(82, 196, 26, 0.1); 
+  color: #52c41a; 
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-section-label-icon.blue {
+  background: rgba(26, 115, 232, 0.2);
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-section-label-icon.green {
+  background: rgba(82, 196, 26, 0.2);
+}
+
+.prompt-scoring .scoring-textarea-wrapper {
+  position: relative;
+}
+
+.prompt-scoring .scoring-prompt-textarea {
+  width: 100%;
+  min-height: 180px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-prompt-textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+.prompt-scoring .scoring-prompt-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.prompt-scoring .scoring-textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prompt-scoring .scoring-char-count {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+
+/* 按钮 */
+.prompt-scoring .scoring-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+}
+
+.prompt-scoring .scoring-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.prompt-scoring .scoring-btn-primary:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
+}
+
+.prompt-scoring .scoring-btn-success {
+  background: linear-gradient(135deg, #52c41a 0%, #389e0d 100%);
+  color: #fff;
+}
+
+.prompt-scoring .scoring-btn-success:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.4);
+  transform: translateY(-1px);
+}
+
+.prompt-scoring .scoring-btn-block {
+  width: 100%;
+}
+
+.prompt-scoring .scoring-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* 分割线 */
+.prompt-scoring .scoring-divider {
+  height: 1px;
+  background: var(--border-color-light);
+}
+
+/* 优化配置折叠区 */
+.prompt-scoring .scoring-optimize-config {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: visible;
+  flex-shrink: 0;
+  margin-bottom: 8px;
+}
+
+.prompt-scoring .scoring-optimize-config-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.prompt-scoring .scoring-optimize-config-header:hover {
+  background: var(--bg-secondary);
+}
+
+.prompt-scoring .scoring-optimize-config-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt-scoring .scoring-collapse-arrow {
+  color: var(--text-tertiary);
+  transition: transform 0.2s;
+}
+
+.prompt-scoring .scoring-optimize-config.collapsed .scoring-collapse-arrow {
+  transform: rotate(-90deg);
+}
+
+.prompt-scoring .scoring-optimize-config.collapsed .scoring-optimize-config-body {
+  display: none;
+}
+
+.prompt-scoring .scoring-optimize-config-body {
+  padding: 16px;
+  padding-bottom: 24px;
+  border-top: 1px solid var(--border-color-light);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* AI 优化按钮 - 确保完整显示 */
+.prompt-scoring .scoring-optimize-config-body > .scoring-btn {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+
+/* 表单 */
+.prompt-scoring .scoring-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prompt-scoring .scoring-form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prompt-scoring .scoring-optional {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.prompt-scoring .scoring-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0 14px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-form-input:focus {
+  border-color: var(--accent-color);
+}
+
+.prompt-scoring .scoring-form-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.prompt-scoring .scoring-form-textarea {
+  width: 100%;
+  min-height: 70px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.15s;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-form-textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.prompt-scoring .scoring-form-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* 优化强度 */
+.prompt-scoring .scoring-intensity-options {
+  display: flex;
+  gap: 10px;
+}
+
+.prompt-scoring .scoring-intensity-option {
+  flex: 1;
+  padding: 12px 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  background: var(--bg-primary);
+}
+
+.prompt-scoring .scoring-intensity-option:hover {
+  border-color: var(--text-tertiary);
+}
+
+.prompt-scoring .scoring-intensity-option.active {
+  border-color: var(--accent-color);
+  background: rgba(26, 115, 232, 0.05);
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-intensity-option.active {
+  background: rgba(26, 115, 232, 0.15);
+}
+
+.prompt-scoring .scoring-intensity-option.active .scoring-intensity-name {
+  color: var(--accent-color);
+}
+
+.prompt-scoring .scoring-intensity-icon {
+  font-size: 20px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-scoring .scoring-intensity-icon.light {
+  color: #faad14;
+}
+
+.prompt-scoring .scoring-intensity-icon.medium {
+  color: #1a73e8;
+}
+
+.prompt-scoring .scoring-intensity-icon.deep {
+  color: #52c41a;
+}
+
+.prompt-scoring .scoring-intensity-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.prompt-scoring .scoring-intensity-desc {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+
+/* 右侧头部 */
+.prompt-scoring .scoring-right-header {
+  padding: 14px 20px;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prompt-scoring .scoring-right-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-right-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.prompt-scoring .scoring-icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+
+.prompt-scoring .scoring-icon-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* 右侧内容 */
+.prompt-scoring .scoring-right-content {
+  flex: 1;
+  padding: 16px 20px;
+  overflow-y: auto;
+  background: var(--bg-secondary);
+}
+
+/* 空状态 */
+.prompt-scoring .scoring-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-tertiary);
+}
+
+.prompt-scoring .scoring-empty-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-tertiary);
+}
+
+.prompt-scoring .scoring-empty-text {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+/* 加载状态 */
+.prompt-scoring .scoring-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 16px;
+}
+
+.prompt-scoring .scoring-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--accent-color);
+  border-radius: 50%;
+  animation: scoringSpinner 1s linear infinite;
+}
+
+@keyframes scoringSpinner {
+  to { transform: rotate(360deg); }
+}
+
+.prompt-scoring .scoring-loading-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+
+/* 结果卡片 */
+.prompt-scoring .scoring-result-card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.prompt-scoring .scoring-result-card:last-child {
+  margin-bottom: 0;
+}
+
+.prompt-scoring .scoring-result-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-color-light);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.prompt-scoring .scoring-result-card-header:hover {
+  background: var(--bg-tertiary);
+}
+
+.prompt-scoring .scoring-result-card-header.no-collapse {
+  cursor: default;
+}
+
+.prompt-scoring .scoring-result-card-header.no-collapse:hover {
+  background: transparent;
+}
+
+.prompt-scoring .scoring-result-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-result-card-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-scoring .scoring-result-card-icon.blue { background: rgba(26, 115, 232, 0.1); color: #1a73e8; }
+.prompt-scoring .scoring-result-card-icon.green { background: rgba(82, 196, 26, 0.1); color: #52c41a; }
+.prompt-scoring .scoring-result-card-icon.orange { background: rgba(250, 140, 22, 0.1); color: #fa8c16; }
+.prompt-scoring .scoring-result-card-icon.purple { background: rgba(114, 46, 209, 0.1); color: #722ed1; }
+.prompt-scoring .scoring-result-card-icon.red { background: rgba(255, 77, 79, 0.1); color: #ff4d4f; }
+.prompt-scoring .scoring-result-card-icon.cyan { background: rgba(19, 194, 194, 0.1); color: #13c2c2; }
+
+[data-theme="dark"] .prompt-scoring .scoring-result-card-icon.blue { background: rgba(26, 115, 232, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-result-card-icon.green { background: rgba(82, 196, 26, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-result-card-icon.orange { background: rgba(250, 140, 22, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-result-card-icon.purple { background: rgba(114, 46, 209, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-result-card-icon.red { background: rgba(255, 77, 79, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-result-card-icon.cyan { background: rgba(19, 194, 194, 0.2); }
+
+.prompt-scoring .scoring-card-collapse-icon {
+  color: var(--text-tertiary);
+  transition: transform 0.2s;
+}
+
+.prompt-scoring .scoring-result-card.collapsed .scoring-card-collapse-icon {
+  transform: rotate(-90deg);
+}
+
+.prompt-scoring .scoring-result-card.collapsed .scoring-result-card-body {
+  display: none;
+}
+
+.prompt-scoring .scoring-result-card-body {
+  padding: 18px;
+}
+
+
+/* 综合评分 */
+.prompt-scoring .scoring-score-main {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.prompt-scoring .scoring-score-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.prompt-scoring .scoring-score-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.prompt-scoring .scoring-score-circle-bg {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 8;
+}
+
+.prompt-scoring .scoring-score-circle-progress {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.prompt-scoring .scoring-score-circle-progress.excellent { stroke: #52c41a; }
+.prompt-scoring .scoring-score-circle-progress.good { stroke: #1a73e8; }
+.prompt-scoring .scoring-score-circle-progress.average { stroke: #fa8c16; }
+.prompt-scoring .scoring-score-circle-progress.poor { stroke: #ff4d4f; }
+
+.prompt-scoring .scoring-score-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.prompt-scoring .scoring-score-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-score-total {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.prompt-scoring .scoring-score-info {
+  flex: 1;
+}
+
+.prompt-scoring .scoring-score-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.prompt-scoring .scoring-score-level.excellent { background: rgba(82, 196, 26, 0.1); color: #52c41a; }
+.prompt-scoring .scoring-score-level.good { background: rgba(26, 115, 232, 0.1); color: #1a73e8; }
+.prompt-scoring .scoring-score-level.average { background: rgba(250, 140, 22, 0.1); color: #fa8c16; }
+.prompt-scoring .scoring-score-level.poor { background: rgba(255, 77, 79, 0.1); color: #ff4d4f; }
+
+[data-theme="dark"] .prompt-scoring .scoring-score-level.excellent { background: rgba(82, 196, 26, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-score-level.good { background: rgba(26, 115, 232, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-score-level.average { background: rgba(250, 140, 22, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-score-level.poor { background: rgba(255, 77, 79, 0.2); }
+
+.prompt-scoring .scoring-score-summary {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+
+/* 维度评分 */
+.prompt-scoring .scoring-dimension-category {
+  margin-bottom: 20px;
+}
+
+.prompt-scoring .scoring-dimension-category:last-child {
+  margin-bottom: 0;
+}
+
+.prompt-scoring .scoring-dimension-category-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-color-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.prompt-scoring .scoring-dimension-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.prompt-scoring .scoring-dimension-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.prompt-scoring .scoring-dimension-name {
+  font-size: 12px;
+  color: var(--text-secondary);
+  min-width: 60px;
+}
+
+.prompt-scoring .scoring-dimension-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.prompt-scoring .scoring-dimension-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.prompt-scoring .scoring-dimension-bar-fill.excellent { background: linear-gradient(90deg, #52c41a, #73d13d); }
+.prompt-scoring .scoring-dimension-bar-fill.good { background: linear-gradient(90deg, #1a73e8, #4096ff); }
+.prompt-scoring .scoring-dimension-bar-fill.average { background: linear-gradient(90deg, #fa8c16, #ffa940); }
+.prompt-scoring .scoring-dimension-bar-fill.poor { background: linear-gradient(90deg, #ff4d4f, #ff7875); }
+
+.prompt-scoring .scoring-dimension-score {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 24px;
+  text-align: right;
+}
+
+/* 改进建议 */
+.prompt-scoring .scoring-suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-scoring .scoring-suggestion-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  border-left: 3px solid;
+}
+
+.prompt-scoring .scoring-suggestion-item.high { border-left-color: #ff4d4f; }
+.prompt-scoring .scoring-suggestion-item.medium { border-left-color: #fa8c16; }
+.prompt-scoring .scoring-suggestion-item.low { border-left-color: #1a73e8; }
+
+.prompt-scoring .scoring-suggestion-priority {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  height: fit-content;
+}
+
+.prompt-scoring .scoring-suggestion-priority.high { background: rgba(255, 77, 79, 0.1); color: #ff4d4f; }
+.prompt-scoring .scoring-suggestion-priority.medium { background: rgba(250, 140, 22, 0.1); color: #fa8c16; }
+.prompt-scoring .scoring-suggestion-priority.low { background: rgba(26, 115, 232, 0.1); color: #1a73e8; }
+
+[data-theme="dark"] .prompt-scoring .scoring-suggestion-priority.high { background: rgba(255, 77, 79, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-suggestion-priority.medium { background: rgba(250, 140, 22, 0.2); }
+[data-theme="dark"] .prompt-scoring .scoring-suggestion-priority.low { background: rgba(26, 115, 232, 0.2); }
+
+.prompt-scoring .scoring-suggestion-content {
+  flex: 1;
+}
+
+.prompt-scoring .scoring-suggestion-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.prompt-scoring .scoring-suggestion-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+
+/* 应用场景 */
+.prompt-scoring .scoring-scene-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.prompt-scoring .scoring-scene-item {
+  padding: 14px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.prompt-scoring .scoring-scene-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prompt-scoring .scoring-scene-value {
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.prompt-scoring .scoring-scene-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.prompt-scoring .scoring-scene-tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  color: var(--text-secondary);
+}
+
+.prompt-scoring .scoring-scene-tag.primary {
+  background: rgba(26, 115, 232, 0.1);
+  border-color: rgba(26, 115, 232, 0.2);
+  color: #1a73e8;
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-scene-tag.primary {
+  background: rgba(26, 115, 232, 0.2);
+  border-color: rgba(26, 115, 232, 0.3);
+}
+
+/* 风险提示 */
+.prompt-scoring .scoring-risk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prompt-scoring .scoring-risk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(255, 77, 79, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 77, 79, 0.15);
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-risk-item {
+  background: rgba(255, 77, 79, 0.1);
+  border-color: rgba(255, 77, 79, 0.2);
+}
+
+.prompt-scoring .scoring-risk-icon {
+  color: #ff4d4f;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.prompt-scoring .scoring-risk-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.prompt-scoring .scoring-risk-text strong {
+  color: var(--text-primary);
+}
+
+/* 标签云 */
+.prompt-scoring .scoring-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.prompt-scoring .scoring-prompt-tag {
+  font-size: 12px;
+  padding: 6px 14px;
+  background: var(--bg-tertiary);
+  border-radius: 16px;
+  color: var(--text-secondary);
+  cursor: default;
+  transition: all 0.15s;
+}
+
+.prompt-scoring .scoring-prompt-tag:hover {
+  background: rgba(26, 115, 232, 0.1);
+  color: #1a73e8;
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-prompt-tag:hover {
+  background: rgba(26, 115, 232, 0.2);
+}
+
+
+/* 优化结果 */
+.prompt-scoring .scoring-changes-section {
+  margin-bottom: 16px;
+}
+
+.prompt-scoring .scoring-changes-title,
+.prompt-scoring .scoring-optimized-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.prompt-scoring .scoring-changes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prompt-scoring .scoring-change-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.prompt-scoring .scoring-change-item.add {
+  background: rgba(82, 196, 26, 0.08);
+  border: 1px solid rgba(82, 196, 26, 0.2);
+}
+
+.prompt-scoring .scoring-change-item.modify {
+  background: rgba(250, 173, 20, 0.08);
+  border: 1px solid rgba(250, 173, 20, 0.2);
+}
+
+.prompt-scoring .scoring-change-item.delete {
+  background: rgba(255, 77, 79, 0.08);
+  border: 1px solid rgba(255, 77, 79, 0.2);
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-change-item.add {
+  background: rgba(82, 196, 26, 0.15);
+  border-color: rgba(82, 196, 26, 0.3);
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-change-item.modify {
+  background: rgba(250, 173, 20, 0.15);
+  border-color: rgba(250, 173, 20, 0.3);
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-change-item.delete {
+  background: rgba(255, 77, 79, 0.15);
+  border-color: rgba(255, 77, 79, 0.3);
+}
+
+.prompt-scoring .scoring-change-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.prompt-scoring .scoring-change-item.add .scoring-change-icon {
+  background: #52c41a;
+  color: #fff;
+}
+
+.prompt-scoring .scoring-change-item.modify .scoring-change-icon {
+  background: #faad14;
+  color: #fff;
+}
+
+.prompt-scoring .scoring-change-item.delete .scoring-change-icon {
+  background: #ff4d4f;
+  color: #fff;
+}
+
+.prompt-scoring .scoring-change-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex: 1;
+  line-height: 1.5;
+}
+
+.prompt-scoring .scoring-change-text strong {
+  color: var(--text-primary);
+}
+
+/* 优化后的提示词 */
+.prompt-scoring .scoring-optimized-section {
+  margin-bottom: 16px;
+}
+
+.prompt-scoring .scoring-optimized-prompt {
+  position: relative;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 16px;
+  padding-right: 80px;
+  border: 1px solid var(--border-color);
+}
+
+.prompt-scoring .scoring-optimized-prompt-content {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.8;
+  word-break: break-word;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Markdown 渲染样式 */
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body {
+  white-space: normal;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body p {
+  margin: 0 0 0.8em 0;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h1,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h2,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h3,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h4,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h5,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h6 {
+  margin: 1em 0 0.5em 0;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h1:first-child,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h2:first-child,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h3:first-child {
+  margin-top: 0;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h1 { font-size: 1.4em; }
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h2 { font-size: 1.25em; }
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body h3 { font-size: 1.1em; }
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body ul,
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body li {
+  margin: 0.3em 0;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body code {
+  background: rgba(0, 0, 0, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9em;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body pre {
+  background: #1e1e1e;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 0.8em 0;
+  overflow-x: auto;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body pre code {
+  background: transparent;
+  padding: 0;
+  color: #d4d4d4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body blockquote {
+  margin: 0.8em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid var(--accent-color);
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 0 6px 6px 0;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body em {
+  font-style: italic;
+}
+
+.prompt-scoring .scoring-optimized-prompt-content.markdown-body hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1em 0;
+}
+
+.prompt-scoring .scoring-copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.prompt-scoring .scoring-copy-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* 优化说明 */
+.prompt-scoring .scoring-optimize-explanation {
+  padding: 14px 16px;
+  background: rgba(26, 115, 232, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(26, 115, 232, 0.15);
+}
+
+[data-theme="dark"] .prompt-scoring .scoring-optimize-explanation {
+  background: rgba(26, 115, 232, 0.1);
+  border-color: rgba(26, 115, 232, 0.2);
+}
+
+.prompt-scoring .scoring-optimize-explanation-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.prompt-scoring .scoring-optimize-explanation-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}

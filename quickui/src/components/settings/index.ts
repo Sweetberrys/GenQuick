@@ -1,0 +1,5 @@
+export { default as GeneralSettings } from './GeneralSettings.vue'
+export { default as ApiSettings } from './ApiSettings.vue'
+export { default as PromptsSettings } from './PromptsSettings.vue'
+export { default as PromptTuning } from './PromptTuning.vue'
+export { default as AboutSettings } from './AboutSettings.vue'

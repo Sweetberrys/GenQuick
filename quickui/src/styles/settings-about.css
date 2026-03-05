@@ -1,0 +1,84 @@
+/* 关于页面样式 */
+@import './settings-base.css';
+
+.about {
+  text-align: center;
+}
+
+.about .about-header {
+  margin-bottom: 24px;
+}
+
+.about .about-header .logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.about .about-header h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.about .about-header .version {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.about .about-desc {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.about .about-info {
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.about .about-info .info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.about .about-info .info-item:not(:last-child) {
+  border-bottom: 1px solid var(--border-color-light);
+}
+
+.about .about-info .info-item .label {
+  color: var(--text-secondary);
+}
+
+.about .about-info .info-item .value {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.about .about-info .info-item .value.clickable {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.about .about-info .info-item .value.clickable:hover {
+  text-decoration: underline;
+}
+
+.about .about-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about .about-links a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.about .about-links a:hover {
+  text-decoration: underline;
+}
